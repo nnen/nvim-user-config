@@ -20,6 +20,12 @@ Telescope
 * `<C-p>`      -- git files
 * `<leader>ps` -- grep search in files
 
+Git
+---
+
+* `<leader>gs` -- git status
+* `<leader>gv` -- git status (vertical)
+
 LSP
 ---
 

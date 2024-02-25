@@ -1,5 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = "VeryLazy",
     init = function()
         vim.g.lualine_laststatus = vim.o.laststatus
@@ -20,7 +21,7 @@ return {
         return {
             options = {
                 theme = "auto",
-                globalstatus = true,
+                globalstatus = false, -- if tree, there's only one status line for all windows, if false, each window has it's own
                 disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } }
             },
             -- sections = {

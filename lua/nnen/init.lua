@@ -57,12 +57,7 @@ require("lazy").setup({
     },
 
     "nvim-treesitter/nvim-treesitter",
-    {
-        "VonHeikemen/lsp-zero.nvim", 
-        branch = 'v3.x',
-        lazy = true,
-        config = false
-    },
+    require("nnen.lsp_zero"),
     {
         "neovim/nvim-lspconfig",
         dependencies = { { "hrsh7th/cmp-nvim-lsp" } }
@@ -76,6 +71,7 @@ require("lazy").setup({
     "Civitasv/cmake-tools.nvim",
 
     require("nnen.lualine"),
+    require("nnen.neo_tree"),
     require("nnen.dashboard"),
 })
 
@@ -113,15 +109,5 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("cmake-tools").setup({
-})
-
-local lsp_zero = require("lsp-zero")
-lsp_zero.on_attach(function(client, bufnr)
-    lsp_zero.default_keymaps({buffer = bufnr})
-end)
-lsp_zero.setup_servers({
-    "pylsp",
-    "clangd",
-    "marksman" -- markdown
 })
 
