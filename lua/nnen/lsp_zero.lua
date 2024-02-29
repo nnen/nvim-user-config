@@ -20,6 +20,9 @@ return {
                     s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
                 },
             }, { mode = "n", prefix = "", buffer = bufnr })
+            wk.register({
+                f = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format document", },
+            }, { mode = "n", prefix = "<leader>f", buffer = bufnr })
             
             -- local bufopts = { noremap=true, silent=true, buffer=bufnr }
             -- vim.keymap.set('n', 'K',  vim.lsp.buf.hover, bufopts)

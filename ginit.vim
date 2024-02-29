@@ -1,5 +1,3 @@
-" GuiFont! Inconsolata\ for\ Powerline:h9
+" NERD font: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Inconsolata.zip
 set guifont=Inconsolata\ for\ Powerline:h9
-" set guifont=FiraCode\ Nerd\ Font\ Mono:h8
-" set guifont=Inconsolata\ Nerd\ Font\ Mono:h9
 
