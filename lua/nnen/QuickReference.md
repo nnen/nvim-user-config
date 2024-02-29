@@ -19,12 +19,21 @@ Telescope
 * `<leader>pf` -- find files
 * `<C-p>`      -- git files
 * `<leader>ps` -- grep search in files
+* `<leader>pp` -- document symbols
+* `<leader>pw` -- workspace symbols
 
 Git
 ---
 
 * `<leader>gs` -- git status
 * `<leader>gv` -- git status (vertical)
+
+CMake
+-----
+
+* `<leader>cg` -- CMake generate
+* `<leader>cb` -- CMake build
+* `<leader>cr` -- CMake run
 
 LSP
 ---

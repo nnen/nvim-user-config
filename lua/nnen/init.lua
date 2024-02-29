@@ -32,11 +32,18 @@ vim.cmd("command! QuickRef edit ~/AppData/Local/nvim/lua/nnen/QuickReference.md"
 require("nnen.bootstrap_lazy")
 
 require("lazy").setup({
-    "sainnhe/sonokai",
-    "sainnhe/edge",
-    "RRethy/nvim-base16",
+    {
+        "sainnhe/sonokai",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd([[colorscheme sonokai]])
+        end,
+    },
+    -- "sainnhe/edge",
+    -- "RRethy/nvim-base16",
     -- "joshdick/onedark.vim",
-    "folke/tokyonight.nvim",
+    -- "folke/tokyonight.nvim",
     
     -- "vim-airline/vim-airline",
     -- "vim-airline/vim-airline-themes",
@@ -62,20 +69,24 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         dependencies = { { "hrsh7th/cmp-nvim-lsp" } }
     },
-    {
-        "hrsh7th/nvim-cmp",
-        dependencies = { { "L3MON4D3/LuaSnip" } }
-    },
+    require("nnen.nvim_cmp"),
+    { "saadparwaiz1/cmp_luasnip", },
+    require("nnen.luasnip"),
+    --{
+    --    "hrsh7th/nvim-cmp",
+    --    dependencies = { { "L3MON4D3/LuaSnip" } }
+    --},
     
     "tpope/vim-fugitive",
-    "Civitasv/cmake-tools.nvim",
+    -- "Civitasv/cmake-tools.nvim",
+    require("nnen.cmake_tools"),
 
     require("nnen.lualine"),
     require("nnen.neo_tree"),
     require("nnen.dashboard"),
 })
 
-vim.cmd.colorscheme("sonokai")
+-- vim.cmd.colorscheme("sonokai")
 
 vim.g.airline_powerline_fonts = 1
 
@@ -89,6 +100,8 @@ wk.register({
 		f = { "<cmd>Telescope find_files<CR>", "Find File" },
 		g = { "<cmd>Telescope git_files<CR>", "Find Git File" },
 		s = { function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end, "Grep Files" },
+		p = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
+		w = { "<cmd>Telescope lsp_workspace_symbols<CR>", "Workspace Symbols" },
 	},
     g = {
         s = { "<cmd>Git<CR>", "Git Status" },
@@ -110,4 +123,5 @@ require("nvim-treesitter.configs").setup({
 
 require("cmake-tools").setup({
 })
+
 

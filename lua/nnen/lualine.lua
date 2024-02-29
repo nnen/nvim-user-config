@@ -22,7 +22,7 @@ return {
             options = {
                 theme = "auto",
                 globalstatus = false, -- if tree, there's only one status line for all windows, if false, each window has it's own
-                disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } }
+                disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "neo-tree" } }
             },
             -- sections = {
             --     lualine_a = { "mode" },

@@ -37,6 +37,7 @@ return {
             config = {
                 header = vim.split(logo, "\n"),
                 center = {
+                    { action = "Neotree",       desc = "Open File Tree",        key = "t" },
                     { action = "OpenConfigDir", desc = "Open Config Directory", key = "o" },
                     { action = "EditConfig",    desc = "Edit Config",           key = "c" },
                     { action = "QuickRef",      desc = "Quick Reference",       key = "r" },
